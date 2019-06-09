@@ -117,4 +117,15 @@
 //    [self.scrollView setContentOffset:offset animated:NO];
 //}
 
+- (void)changeleftBarButtonItem:(NSString *)leftStr {
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [leftButton setTitle:leftStr forState:UIControlStateNormal];
+    leftButton.frame = CGRectMake(0, 0, 50, 30);
+    [leftButton addTarget:self action:@selector(leftItemTapped) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
+}
+
 @end

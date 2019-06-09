@@ -10,6 +10,21 @@
 
 @interface BGLRegisterView ()
 
+///邮箱输入栏
+@property (nonatomic, strong) UITextField *mailboxTextField;
+///用户名输入栏
+@property (nonatomic, strong) UITextField *usernameTextField;
+///密码输入栏
+@property (nonatomic, strong) UITextField *passwordTextField;
+///重复密码输入栏
+@property (nonatomic, strong) UITextField *affirmPasswordTextField;
+///验证码输入栏
+@property (nonatomic, strong) UITextField *verificationTextField;
+///登陆按钮
+@property (nonatomic, strong) UIButton *loginButton;
+///注册按钮
+@property (nonatomic, strong) UIButton *registerButton;
+
 @property (nonatomic, strong) UIButton *sendButton;
 
 @end
@@ -32,6 +47,8 @@
         [self setupSendButton];
         [self setupLoginButton];
         [self setupRegisterButton];
+        
+        self.textFieldArr = @[_usernameTextField, _mailboxTextField, _passwordTextField, _affirmPasswordTextField, _verificationTextField];
     }
     return self;
 }
@@ -148,7 +165,13 @@
     _sendButton.backgroundColor = [UIColor colorWithRed:0.72f green:0.54f blue:0.64f alpha:1.00f];
     [_sendButton setTitle:@"发送" forState:UIControlStateNormal];
     [_sendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_sendButton addTarget:self action:@selector(touchLogin) forControlEvents:UIControlEventTouchUpInside];
+    [_sendButton addTarget:self action:@selector(touchSend) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)touchSend {
+    if (self.touchSendBlock) {
+        self.touchSendBlock(_mailboxTextField.text);
+    }
 }
 
 #pragma mark - 登陆Button设置

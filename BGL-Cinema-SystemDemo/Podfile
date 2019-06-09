@@ -2,4 +2,6 @@ platform :ios, '7.0'
 target 'BGL-Cinema-SystemDemo' do
 pod 'AFNetworking'
 pod 'Masonry'
+pod 'SDWebImage'
+pod 'SDCycleScrollView'
 end

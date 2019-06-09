@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0425D94422ABABDC005EFEF0 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94322ABABDC005EFEF0 /* MovieTableViewCell.m */; };
+		0425D95822ABB4FC005EFEF0 /* UIView+ym_extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94822ABB4FC005EFEF0 /* UIView+ym_extension.m */; };
+		0425D95922ABB4FC005EFEF0 /* YMCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94922ABB4FC005EFEF0 /* YMCityModel.m */; };
+		0425D95A22ABB4FC005EFEF0 /* YMCitySearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94A22ABB4FC005EFEF0 /* YMCitySearch.m */; };
+		0425D95B22ABB4FC005EFEF0 /* YMCitySelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94C22ABB4FC005EFEF0 /* YMCitySelect.m */; };
+		0425D95C22ABB4FC005EFEF0 /* YMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94E22ABB4FC005EFEF0 /* YMSearchBar.m */; };
+		0425D95D22ABB4FC005EFEF0 /* YMCityGroupsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D94F22ABB4FC005EFEF0 /* YMCityGroupsModel.m */; };
+		0425D95E22ABB4FC005EFEF0 /* YMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D95222ABB4FC005EFEF0 /* YMTableViewCell.m */; };
+		0425D95F22ABB4FC005EFEF0 /* YMCitySelect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0425D95522ABB4FC005EFEF0 /* YMCitySelect.bundle */; };
+		0425D96022ABB4FC005EFEF0 /* YMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D95622ABB4FC005EFEF0 /* YMCollectionViewCell.m */; };
+		0425D96222ABB505005EFEF0 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D96122ABB505005EFEF0 /* Foundation+Log.m */; };
+		0425D96822ABDC9D005EFEF0 /* 113.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0425D96422ABDC9D005EFEF0 /* 113.jpg */; };
+		0425D96922ABDC9D005EFEF0 /* 111.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0425D96522ABDC9D005EFEF0 /* 111.jpg */; };
+		0425D96A22ABDC9D005EFEF0 /* 114.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0425D96622ABDC9D005EFEF0 /* 114.jpg */; };
+		0425D96B22ABDC9D005EFEF0 /* 112.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0425D96722ABDC9D005EFEF0 /* 112.jpg */; };
 		04504BAD226D92240049D5A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04504BAC226D92240049D5A9 /* AppDelegate.m */; };
 		04504BB0226D92240049D5A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04504BAF226D92240049D5A9 /* ViewController.m */; };
 		04504BB3226D92240049D5A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04504BB1226D92240049D5A9 /* Main.storyboard */; };
@@ -56,6 +71,8 @@
 		047272CD22A7915E00F7CE52 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 047272C422A7915E00F7CE52 /* .gitignore */; };
 		047272CE22A7915E00F7CE52 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 047272C722A7915E00F7CE52 /* NSData+CommonCrypto.m */; };
 		047272CF22A7915E00F7CE52 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 047272C822A7915E00F7CE52 /* NSData+Base64.m */; };
+		04A6A38022A8EBE600F5DE11 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6A37E22A8EBE600F5DE11 /* APIClient.m */; };
+		04A6A38122A8EBE600F5DE11 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04A6A37F22A8EBE600F5DE11 /* Reachability.m */; };
 		04B779E3227FFC31006538FC /* BGLLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B779E2227FFC31006538FC /* BGLLoginView.m */; };
 		04B779E6227FFC4C006538FC /* BGLRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B779E5227FFC4C006538FC /* BGLRegisterView.m */; };
 		04B779F522800D89006538FC /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04B779F022800D89006538FC /* 12.jpg */; };
@@ -89,6 +106,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0425D94222ABABDC005EFEF0 /* MovieTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
+		0425D94322ABABDC005EFEF0 /* MovieTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
+		0425D94722ABB4FC005EFEF0 /* YMCityGroupsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCityGroupsModel.h; sourceTree = "<group>"; };
+		0425D94822ABB4FC005EFEF0 /* UIView+ym_extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ym_extension.m"; sourceTree = "<group>"; };
+		0425D94922ABB4FC005EFEF0 /* YMCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCityModel.m; sourceTree = "<group>"; };
+		0425D94A22ABB4FC005EFEF0 /* YMCitySearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCitySearch.m; sourceTree = "<group>"; };
+		0425D94B22ABB4FC005EFEF0 /* YMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTableViewCell.h; sourceTree = "<group>"; };
+		0425D94C22ABB4FC005EFEF0 /* YMCitySelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCitySelect.m; sourceTree = "<group>"; };
+		0425D94D22ABB4FC005EFEF0 /* YMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCollectionViewCell.h; sourceTree = "<group>"; };
+		0425D94E22ABB4FC005EFEF0 /* YMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMSearchBar.m; sourceTree = "<group>"; };
+		0425D94F22ABB4FC005EFEF0 /* YMCityGroupsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCityGroupsModel.m; sourceTree = "<group>"; };
+		0425D95022ABB4FC005EFEF0 /* UIView+ym_extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ym_extension.h"; sourceTree = "<group>"; };
+		0425D95122ABB4FC005EFEF0 /* YMCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCityModel.h; sourceTree = "<group>"; };
+		0425D95222ABB4FC005EFEF0 /* YMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTableViewCell.m; sourceTree = "<group>"; };
+		0425D95322ABB4FC005EFEF0 /* YMCitySelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCitySelect.h; sourceTree = "<group>"; };
+		0425D95422ABB4FC005EFEF0 /* YMCitySearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCitySearch.h; sourceTree = "<group>"; };
+		0425D95522ABB4FC005EFEF0 /* YMCitySelect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YMCitySelect.bundle; sourceTree = "<group>"; };
+		0425D95622ABB4FC005EFEF0 /* YMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCollectionViewCell.m; sourceTree = "<group>"; };
+		0425D95722ABB4FC005EFEF0 /* YMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMSearchBar.h; sourceTree = "<group>"; };
+		0425D96122ABB505005EFEF0 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		0425D96422ABDC9D005EFEF0 /* 113.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 113.jpg; sourceTree = "<group>"; };
+		0425D96522ABDC9D005EFEF0 /* 111.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 111.jpg; sourceTree = "<group>"; };
+		0425D96622ABDC9D005EFEF0 /* 114.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 114.jpg; sourceTree = "<group>"; };
+		0425D96722ABDC9D005EFEF0 /* 112.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 112.jpg; sourceTree = "<group>"; };
 		04504BA8226D92240049D5A9 /* BGL-Cinema-SystemDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BGL-Cinema-SystemDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04504BAB226D92240049D5A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04504BAC226D92240049D5A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,6 +207,11 @@
 		047272C622A7915E00F7CE52 /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
 		047272C722A7915E00F7CE52 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		047272C822A7915E00F7CE52 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		04A6A37B22A8EBE600F5DE11 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		04A6A37C22A8EBE600F5DE11 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		04A6A37D22A8EBE600F5DE11 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		04A6A37E22A8EBE600F5DE11 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		04A6A37F22A8EBE600F5DE11 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		04B779E1227FFC31006538FC /* BGLLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGLLoginView.h; sourceTree = "<group>"; };
 		04B779E2227FFC31006538FC /* BGLLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGLLoginView.m; sourceTree = "<group>"; };
 		04B779E4227FFC4C006538FC /* BGLRegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGLRegisterView.h; sourceTree = "<group>"; };
@@ -215,6 +261,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0425D94122ABAA95005EFEF0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0425D94222ABABDC005EFEF0 /* MovieTableViewCell.h */,
+				0425D94322ABABDC005EFEF0 /* MovieTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		0425D94522ABB462005EFEF0 /* YMCitySelectSupport */ = {
+			isa = PBXGroup;
+			children = (
+				0425D94622ABB4FC005EFEF0 /* YMCitySelect */,
+			);
+			path = YMCitySelectSupport;
+			sourceTree = "<group>";
+		};
+		0425D94622ABB4FC005EFEF0 /* YMCitySelect */ = {
+			isa = PBXGroup;
+			children = (
+				0425D96122ABB505005EFEF0 /* Foundation+Log.m */,
+				0425D94722ABB4FC005EFEF0 /* YMCityGroupsModel.h */,
+				0425D94822ABB4FC005EFEF0 /* UIView+ym_extension.m */,
+				0425D94922ABB4FC005EFEF0 /* YMCityModel.m */,
+				0425D94A22ABB4FC005EFEF0 /* YMCitySearch.m */,
+				0425D94B22ABB4FC005EFEF0 /* YMTableViewCell.h */,
+				0425D94C22ABB4FC005EFEF0 /* YMCitySelect.m */,
+				0425D94D22ABB4FC005EFEF0 /* YMCollectionViewCell.h */,
+				0425D94E22ABB4FC005EFEF0 /* YMSearchBar.m */,
+				0425D94F22ABB4FC005EFEF0 /* YMCityGroupsModel.m */,
+				0425D95022ABB4FC005EFEF0 /* UIView+ym_extension.h */,
+				0425D95122ABB4FC005EFEF0 /* YMCityModel.h */,
+				0425D95222ABB4FC005EFEF0 /* YMTableViewCell.m */,
+				0425D95322ABB4FC005EFEF0 /* YMCitySelect.h */,
+				0425D95422ABB4FC005EFEF0 /* YMCitySearch.h */,
+				0425D95522ABB4FC005EFEF0 /* YMCitySelect.bundle */,
+				0425D95622ABB4FC005EFEF0 /* YMCollectionViewCell.m */,
+				0425D95722ABB4FC005EFEF0 /* YMSearchBar.h */,
+			);
+			path = YMCitySelect;
+			sourceTree = "<group>";
+		};
+		0425D96322ABDC7D005EFEF0 /* TEST IMAGE */ = {
+			isa = PBXGroup;
+			children = (
+				0425D96522ABDC9D005EFEF0 /* 111.jpg */,
+				0425D96722ABDC9D005EFEF0 /* 112.jpg */,
+				0425D96422ABDC9D005EFEF0 /* 113.jpg */,
+				0425D96622ABDC9D005EFEF0 /* 114.jpg */,
+			);
+			path = "TEST IMAGE";
+			sourceTree = "<group>";
+		};
 		04504B9F226D92240049D5A9 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +339,8 @@
 		04504BAA226D92240049D5A9 /* BGL-Cinema-SystemDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0425D96322ABDC7D005EFEF0 /* TEST IMAGE */,
+				0425D94522ABB462005EFEF0 /* YMCitySelectSupport */,
 				0472717E22A7911600F7CE52 /* NYCatEyesClasses */,
 				04B9E7D42289469200AFE4B1 /* Tool */,
 				04504BE6226D9CC70049D5A9 /* Main */,
@@ -301,6 +402,7 @@
 		04504BDF226D958C0049D5A9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04A6A37A22A8EBCD00F5DE11 /* BCLManage */,
 				04504BE8226DC11D0049D5A9 /* RegisterLogIn */,
 			);
 			path = Classes;
@@ -332,10 +434,10 @@
 		04504BE9226DC1F30049D5A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04B77A0022800ED8006538FC /* BGLRegisterViewController.h */,
-				04B77A0122800ED8006538FC /* BGLRegisterViewController.m */,
 				04B77A0622801175006538FC /* BGLLoginViewController.h */,
 				04B77A0722801175006538FC /* BGLLoginViewController.m */,
+				04B77A0022800ED8006538FC /* BGLRegisterViewController.h */,
+				04B77A0122800ED8006538FC /* BGLRegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -401,16 +503,10 @@
 		0472718C22A7911600F7CE52 /* MovieTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				0472718D22A7911600F7CE52 /* MovieThirdViewController.xib */,
-				0472718E22A7911600F7CE52 /* MovieSecondViewController.h */,
-				0472718F22A7911600F7CE52 /* MovieFirstViewController.m */,
 				0472719022A7911600F7CE52 /* SubClasses */,
-				0472719422A7911600F7CE52 /* MovieThirdViewController.m */,
-				0472719522A7911600F7CE52 /* MovieSecondViewController.m */,
-				0472719622A7911600F7CE52 /* MovieSecondViewController.xib */,
-				0472719722A7911600F7CE52 /* MovieFirstViewController.h */,
-				0472719822A7911600F7CE52 /* MovieThirdViewController.h */,
 				0472719922A7911600F7CE52 /* MovieFirstViewController.xib */,
+				0472719622A7911600F7CE52 /* MovieSecondViewController.xib */,
+				0472718D22A7911600F7CE52 /* MovieThirdViewController.xib */,
 			);
 			path = MovieTabBar;
 			sourceTree = "<group>";
@@ -418,8 +514,15 @@
 		0472719022A7911600F7CE52 /* SubClasses */ = {
 			isa = PBXGroup;
 			children = (
-				0472719122A7911600F7CE52 /* LocationViewController.m */,
+				0425D94122ABAA95005EFEF0 /* Cell */,
+				0472719722A7911600F7CE52 /* MovieFirstViewController.h */,
+				0472718F22A7911600F7CE52 /* MovieFirstViewController.m */,
+				0472718E22A7911600F7CE52 /* MovieSecondViewController.h */,
+				0472719522A7911600F7CE52 /* MovieSecondViewController.m */,
+				0472719822A7911600F7CE52 /* MovieThirdViewController.h */,
+				0472719422A7911600F7CE52 /* MovieThirdViewController.m */,
 				0472719222A7911600F7CE52 /* LocationViewController.h */,
+				0472719122A7911600F7CE52 /* LocationViewController.m */,
 				0472719322A7911600F7CE52 /* LocationViewController.xib */,
 			);
 			path = SubClasses;
@@ -499,6 +602,18 @@
 				047272C822A7915E00F7CE52 /* NSData+Base64.m */,
 			);
 			path = "AESCrypt-ObjC-master";
+			sourceTree = "<group>";
+		};
+		04A6A37A22A8EBCD00F5DE11 /* BCLManage */ = {
+			isa = PBXGroup;
+			children = (
+				04A6A37B22A8EBE600F5DE11 /* APIClient.h */,
+				04A6A37E22A8EBE600F5DE11 /* APIClient.m */,
+				04A6A37D22A8EBE600F5DE11 /* Reachability.h */,
+				04A6A37F22A8EBE600F5DE11 /* Reachability.m */,
+				04A6A37C22A8EBE600F5DE11 /* Singleton.h */,
+			);
+			path = BCLManage;
 			sourceTree = "<group>";
 		};
 		04B9E7D42289469200AFE4B1 /* Tool */ = {
@@ -631,8 +746,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0425D96A22ABDC9D005EFEF0 /* 114.jpg in Resources */,
 				04B779F522800D89006538FC /* 12.jpg in Resources */,
 				047271B622A7911600F7CE52 /* icon_movie@2x.png in Resources */,
+				0425D96922ABDC9D005EFEF0 /* 111.jpg in Resources */,
 				047271B822A7911600F7CE52 /* icon_header_back@2x.png in Resources */,
 				04504BB8226D92270049D5A9 /* LaunchScreen.storyboard in Resources */,
 				047272CA22A7915E00F7CE52 /* LICENSE in Resources */,
@@ -651,12 +768,15 @@
 				04B779F822800D89006538FC /* back_img.png in Resources */,
 				047271B922A7911600F7CE52 /* icon_found@2x.png in Resources */,
 				047271BD22A7911600F7CE52 /* icon_movie_selected@2x.png in Resources */,
+				0425D96B22ABDC9D005EFEF0 /* 112.jpg in Resources */,
 				047271BC22A7911600F7CE52 /* btn_search@2x.png in Resources */,
 				04B779F722800D89006538FC /* register1.jpg in Resources */,
 				047271C322A7911600F7CE52 /* LocationViewController.xib in Resources */,
 				04B779F922800D89006538FC /* land.jpg in Resources */,
 				047271C622A7911600F7CE52 /* MovieSecondViewController.xib in Resources */,
 				04504BB3226D92240049D5A9 /* Main.storyboard in Resources */,
+				0425D95F22ABB4FC005EFEF0 /* YMCitySelect.bundle in Resources */,
+				0425D96822ABDC9D005EFEF0 /* 113.jpg in Resources */,
 				047271C922A7911600F7CE52 /* TheaterViewController.xib in Resources */,
 				047271BB22A7911600F7CE52 /* icon_mine@2x.png in Resources */,
 				047271D322A7911600F7CE52 /* FoundSecondViewController.xib in Resources */,
@@ -712,12 +832,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				04504BB0226D92240049D5A9 /* ViewController.m in Sources */,
+				0425D95C22ABB4FC005EFEF0 /* YMSearchBar.m in Sources */,
 				04B779FC22800EA1006538FC /* BGLBaseViewController.m in Sources */,
 				04B779E3227FFC31006538FC /* BGLLoginView.m in Sources */,
+				0425D95922ABB4FC005EFEF0 /* YMCityModel.m in Sources */,
 				04B9E7E0228949FB00AFE4B1 /* NSString+RegexCategory.m in Sources */,
+				04A6A38122A8EBE600F5DE11 /* Reachability.m in Sources */,
+				0425D95A22ABB4FC005EFEF0 /* YMCitySearch.m in Sources */,
 				047271CC22A7911600F7CE52 /* RootTabBarViewController.m in Sources */,
 				047271D022A7911600F7CE52 /* MineViewController.m in Sources */,
 				047271CD22A7911600F7CE52 /* NYSegmentViewController.m in Sources */,
+				0425D95E22ABB4FC005EFEF0 /* YMTableViewCell.m in Sources */,
 				04B77A0222800ED8006538FC /* BGLRegisterViewController.m in Sources */,
 				04B77A0822801175006538FC /* BGLLoginViewController.m in Sources */,
 				047272C922A7915E00F7CE52 /* NSString+Base64.m in Sources */,
@@ -726,17 +851,24 @@
 				047271CB22A7911600F7CE52 /* CustomeViewController.m in Sources */,
 				047271D122A7911600F7CE52 /* FoundFirstViewController.m in Sources */,
 				047271CA22A7911600F7CE52 /* BaseViewController.m in Sources */,
+				0425D95B22ABB4FC005EFEF0 /* YMCitySelect.m in Sources */,
 				047272CB22A7915E00F7CE52 /* AESCrypt.m in Sources */,
 				047271CE22A7911600F7CE52 /* NYSegmentControll.m in Sources */,
 				047272CF22A7915E00F7CE52 /* NSData+Base64.m in Sources */,
 				047271C222A7911600F7CE52 /* LocationViewController.m in Sources */,
 				04B779E6227FFC4C006538FC /* BGLRegisterView.m in Sources */,
+				0425D94422ABABDC005EFEF0 /* MovieTableViewCell.m in Sources */,
+				0425D95822ABB4FC005EFEF0 /* UIView+ym_extension.m in Sources */,
 				047271C122A7911600F7CE52 /* MovieFirstViewController.m in Sources */,
 				04504BAD226D92240049D5A9 /* AppDelegate.m in Sources */,
 				047271C422A7911600F7CE52 /* MovieThirdViewController.m in Sources */,
+				0425D96222ABB505005EFEF0 /* Foundation+Log.m in Sources */,
+				0425D95D22ABB4FC005EFEF0 /* YMCityGroupsModel.m in Sources */,
 				04504BE5226D99BA0049D5A9 /* BGLBaseTableViewCell.m in Sources */,
 				04504BE2226D99970049D5A9 /* BGLBaseView.m in Sources */,
+				0425D96022ABB4FC005EFEF0 /* YMCollectionViewCell.m in Sources */,
 				047271D422A7911600F7CE52 /* FoundSecondViewController.m in Sources */,
+				04A6A38022A8EBE600F5DE11 /* APIClient.m in Sources */,
 				047271C822A7911600F7CE52 /* TheaterViewController.m in Sources */,
 				047271C522A7911600F7CE52 /* MovieSecondViewController.m in Sources */,
 			);

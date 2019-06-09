@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //邮箱
 - (BOOL)isEmailAddress;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

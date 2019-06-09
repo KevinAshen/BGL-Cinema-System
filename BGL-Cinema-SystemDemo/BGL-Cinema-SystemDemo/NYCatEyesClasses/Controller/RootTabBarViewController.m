@@ -17,8 +17,10 @@
 #import "NYSegmentViewController.h"
 #import "FoundFirstViewController.h"
 #import "FoundSecondViewController.h"
+#import "YMCitySelect.h"
+#import "UIView+ym_extension.h"
 
-@interface RootTabBarViewController ()
+@interface RootTabBarViewController ()<YMCitySelectDelegate>
 @property (strong, nonatomic) CustomeViewController *locationNavController;
 @property (strong, nonatomic) NYSegmentViewController *movieController;
 @property (strong, nonatomic) TheaterViewController *theaterViewController;
@@ -26,13 +28,22 @@
 @property (strong, nonatomic) MineViewController *mineViewController;
 @end
 
-@implementation RootTabBarViewController
+@implementation RootTabBarViewController {
+    NSString *_cityStr;
+}
 @synthesize locationNavController;
 
 - (CustomeViewController *)locationNavController {
+//    if (nil == locationNavController) {
+//        LocationViewController *locationViewController = [[LocationViewController alloc]initWithNibName:@"LocationViewController" bundle:nil];
+//        locationNavController = [[CustomeViewController alloc]initWithRootViewController:locationViewController];
+//    } else {
+//        [locationNavController popToRootViewControllerAnimated:YES];
+//    }
+//    return locationNavController;
     if (nil == locationNavController) {
-        LocationViewController *locationViewController = [[LocationViewController alloc]initWithNibName:@"LocationViewController" bundle:nil];
-        locationNavController = [[CustomeViewController alloc]initWithRootViewController:locationViewController];
+        YMCitySelect *citySelect = [[YMCitySelect alloc] initWithDelegate:self];
+         locationNavController = [[CustomeViewController alloc]initWithRootViewController:citySelect];
     } else {
         [locationNavController popToRootViewControllerAnimated:YES];
     }
@@ -41,8 +52,10 @@
 
 - (NYSegmentViewController *)movieController{
     if (nil == _movieController) {
+    
         _movieController = [[NYSegmentViewController alloc]init];
-        [_movieController setLeftNaviItemWithTitle:@"苏州 >" size:12 imageName:nil];
+    NSLog(@"_cityStr:%@", _cityStr);
+        [_movieController setLeftNaviItemWithTitle:_cityStr size:12 imageName:nil];
         [_movieController setRightNaviItemWithTitle:nil imageName:@"btn_search.png"];
         MovieFirstViewController *firstVC = [[MovieFirstViewController alloc] init];
         MovieSecondViewController *secondVC = [[MovieSecondViewController alloc] init];
@@ -108,11 +121,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _cityStr = @"西安";
+    
     [self loadSubViewControllers];
     self.tabBar.tintColor = [UIColor colorWithRed:208.0f/255 green:38.0f/255 blue:43.0f/255 alpha:1.0f];
     self.tabBar.barTintColor = [UIColor whiteColor];
     self.delegate = self;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(showLocationViewWithNotification:) name:@"PresentLocationViewController" object:nil];
+}
+
+-(void)ym_ymCitySelectCityName:(NSString *)cityName{
+    _cityStr = cityName;
+    [_movieController changeleftBarButtonItem:cityName];
+    NSLog(@"cityName:%@", cityName);
 }
 
 @end

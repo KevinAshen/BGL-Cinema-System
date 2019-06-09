@@ -46,6 +46,7 @@
     {
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftItemTapped)];
         self.navigationItem.leftBarButtonItem = leftItem;
+        
         return;
     }
 }
@@ -72,6 +73,7 @@
         [leftButton addTarget:self action:@selector(leftItemTapped) forControlEvents:UIControlEventTouchUpInside];
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         self.navigationItem.leftBarButtonItem = leftItem;
+        NSLog(@"self.navigationItem.leftBarButtonItem-->%@", self.navigationItem.leftBarButtonItem.title);
         return;
     }
 }

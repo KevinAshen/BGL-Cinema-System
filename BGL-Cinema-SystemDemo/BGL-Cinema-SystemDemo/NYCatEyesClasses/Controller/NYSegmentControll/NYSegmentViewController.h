@@ -12,6 +12,7 @@
 
 @interface NYSegmentViewController : BaseViewController
 
+
 @property (nonatomic, copy) NSArray *viewControllerArray;
 @property (nonatomic, copy) NSArray *titleArray;
 
@@ -23,6 +24,9 @@
 @property (nonatomic, assign) CGFloat itemWidth;
 /** segment每一项的高 */
 @property (nonatomic, assign) CGFloat itemHeight;
+
+- (void)changeleftBarButtonItem:(NSString *)leftStr;
+
 @end
 
 

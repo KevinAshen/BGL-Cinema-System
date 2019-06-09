@@ -10,6 +10,9 @@
 #define PrefixHeader_pch
 
 #import <Masonry.h>
+#import "APIClient.h"
+
+static const NSString *URLFir = @"https://39.107.70.44:8080";
 
 // 屏幕两边间距
 #define kBigMargin 64

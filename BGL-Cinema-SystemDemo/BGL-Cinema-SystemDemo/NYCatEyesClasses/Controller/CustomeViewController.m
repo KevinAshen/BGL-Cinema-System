@@ -29,4 +29,10 @@
     
     
 }
+
+- (void)changeleftBarButtonItem:(NSString *)leftStr {
+    self.navigationItem.leftBarButtonItem.title = leftStr;
+}
+
+
 @end

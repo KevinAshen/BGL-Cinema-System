@@ -26,12 +26,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //添加到- (void)viewDidLoad
+    // 键盘出现 视图上移事件
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppear:) name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisAppear:) name:UIKeyboardWillHideNotification object:nil];
+    
     _loginView = [[BGLLoginView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_loginView];
     
-    _loginView.mailboxTextField.delegate = self;
-    _loginView.passwordTextField.delegate = self;
-    _loginView.verificationTextField.delegate = self;
+    for (int i = 0; i < _loginView.textFieldArr.count; i++) {
+        UITextField *tempTextField = _loginView.textFieldArr[i];
+        tempTextField.delegate = self;
+    }
     
     _loginView.touchLoginBlock = ^{
         self->_rootTabBarViewController= [[RootTabBarViewController alloc]init];
@@ -65,14 +72,29 @@
    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// 键盘出现 视图上移事件
+- (void)keyboardWillDisAppear:(NSNotification *)notification{
+    [UIView animateWithDuration:1 animations:^{self.view.transform = CGAffineTransformMakeTranslation(0, 0);}];
 }
-*/
+
+- (void)keyboardWillAppear:(NSNotification *)notification{
+    CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGFloat keyboardY = keyboardFrame.origin.y;
+    [UIView animateWithDuration:1.0 animations:^{self.view.transform = CGAffineTransformMakeTranslation(0, keyboardY - self.view.frame.size.height);}];
+}
+
+//点击空白处，收回键盘
+//需要self.View没有被别的控件挡住
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
+//点击键盘上的return，收回键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    // 必须辞去第一响应者后,键盘才会回缩.
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
