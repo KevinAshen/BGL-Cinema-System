@@ -10,6 +10,19 @@
 
 @implementation BGLBaseTableViewCell
 
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        [self setupUI];
+        
+    }
+    return self;
+}
+
+- (void)setupUI {
+    
+}
+
 + (CGFloat)getHeight:(id)data {
     return 0;
 }

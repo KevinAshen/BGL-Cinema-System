@@ -16,7 +16,11 @@
 
 @property (nonatomic, strong) BGLLoginView *loginView;
 
-@property (strong, nonatomic) RootTabBarViewController *rootTabBarViewController;
+@property (nonatomic, strong) RootTabBarViewController *rootTabBarViewController;
+
+@property (nonatomic, strong) NSMutableArray *loginMut;
+
+
 
 @end
 
@@ -35,12 +39,24 @@
     _loginView = [[BGLLoginView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_loginView];
     
+    self.loginMut = [[NSMutableArray alloc] init];
+    
     for (int i = 0; i < _loginView.textFieldArr.count; i++) {
         UITextField *tempTextField = _loginView.textFieldArr[i];
         tempTextField.delegate = self;
     }
     
     _loginView.touchLoginBlock = ^{
+        for (int i = 0; i < 3; i++) {
+            UITextField *tempTextField = _loginView.textFieldArr[i];
+            NSString *tempStr = tempTextField.text;
+            NSLog(@"%d:%@", i, tempStr);
+            [_loginMut addObject:tempStr];
+        }
+        NSDictionary *loginDic = @{@"email":_loginMut[0], @"password":_loginMut[1], @"code":_loginMut[2]};
+        [self postLogin:loginDic];
+        
+        
         self->_rootTabBarViewController= [[RootTabBarViewController alloc]init];
         [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:208.0f/255 green:38.0f/255 blue:43.0f/255 alpha:1.0f]];
         [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -63,7 +79,7 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    //NSLog(@"testEND--%@---", textField.text);
+   // NSLog(@"testEND--%@---", textField.text);
     if (textField.tag == 1) {
         NSString *testStr = textField.text;
         BOOL res = [testStr isEmailAddress];
@@ -96,5 +112,38 @@
     [textField resignFirstResponder];
     return YES;
 }
+
+- (void)postLogin:(NSDictionary *)parameters {
+    //@"https://192.168.43.188:8080/codeController/getCheckCode"
+    ///CustomersController/registered
+    NSString *url = @"https://39.107.70.44:8080/CustomersController/customer";
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@--parameters---", parameters);
+    //    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
+    //    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
+    //    NSLog(@"%@--parameters---", parameters);
+    
+    
+    if([APIClient networkType] > 0) {
+        [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
+            NSLog(@"%ld", (long)requestStatusCode);
+            switch (requestStatusCode) {
+                case ApiRequestOK:{
+                    NSLog(@"OK");
+                    NSLog(@"JSON:%@", JSON);
+                    break;
+                }
+                case ApiRequestError:
+                    break;
+                case ApiRequestNotReachable:
+                    break;
+                default:
+                    break;
+            }
+        }];
+    }
+}
+
 
 @end

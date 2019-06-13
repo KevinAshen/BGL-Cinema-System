@@ -6,6 +6,7 @@
 //  Copyright © 2019 姜凯文. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "BGLLoginView.h"
 
 @interface BGLLoginView ()
@@ -20,6 +21,9 @@
 @property (nonatomic, strong) UIButton *loginButton;
 ///注册按钮
 @property (nonatomic, strong) UIButton *registerButton;
+
+///验证码
+@property (nonatomic, strong) UIImageView *checkImageView;
 
 @end
 
@@ -36,6 +40,7 @@
         [self setupMailboxTextField];
         [self setupPasswordTextField];
         [self setupVerificationTextField];
+        [self setupCheckImageView];
         [self setupLoginButton];
         [self setupRegisterButton];
         
@@ -89,7 +94,7 @@
     
     [_verificationTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(kBigMargin);
-        make.centerX.equalTo(self);
+        make.right.equalTo(self.mas_right).offset(-kBigMargin * 2.5);
         make.top.equalTo(self.passwordTextField.mas_bottom).offset(kBigMargin / 2.0);
         make.height.mas_equalTo(kBigMargin / 2.0);
     }];
@@ -98,6 +103,32 @@
     _verificationTextField.backgroundColor = [UIColor colorWithRed:0.82f green:0.82f blue:0.82f alpha:1.00f];
     _verificationTextField.placeholder = @"请输入验证码";
     _verificationTextField.borderStyle = UITextBorderStyleNone;
+}
+
+#pragma mark - 验证ImageView设置
+- (void)setupCheckImageView {
+    _checkImageView = [[UIImageView alloc] init];
+    [self addSubview:_checkImageView];
+    
+    [_checkImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.verificationTextField.mas_right).offset(kBigMargin / 4.0);
+        make.right.equalTo(self.mas_right).offset(-kBigMargin);
+        make.top.equalTo(self.passwordTextField.mas_bottom).offset(kBigMargin / 2.0);
+        make.height.mas_equalTo(kBigMargin / 2.0);
+    }];
+    
+    _checkImageView.backgroundColor = [UIColor colorWithRed:0.72f green:0.54f blue:0.64f alpha:1.00f];
+    [self.checkImageView sd_setImageWithURL:[NSURL URLWithString:@"https://39.107.70.44:8080/codeController/getCheckphoto"] placeholderImage:nil options:SDWebImageAllowInvalidSSLCertificates];
+    
+    UITapGestureRecognizer *tapRefresh = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(refreshCheckImageView)];
+    _checkImageView.userInteractionEnabled = YES;
+    [_checkImageView addGestureRecognizer:tapRefresh];
+}
+
+- (void)refreshCheckImageView {
+    [[SDImageCache sharedImageCache] clearMemory];
+    [[SDImageCache sharedImageCache] clearDiskOnCompletion:nil];
+    [self.checkImageView sd_setImageWithURL:[NSURL URLWithString:@"https://39.107.70.44:8080/codeController/getCheckphoto"] placeholderImage:nil options:SDWebImageAllowInvalidSSLCertificates];
 }
 
 #pragma mark - 登陆Button设置
@@ -118,9 +149,11 @@
     [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [_loginButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_loginButton addTarget:self action:@selector(touchLogin) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)touchLogin {
+    [self refreshCheckImageView];
     if (self.touchLoginBlock) {
         self.touchLoginBlock();
     }
@@ -146,6 +179,7 @@
     [_registerButton addTarget:self action:@selector(touchRegister) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)touchRegister {
+    [self refreshCheckImageView];
     if (self.touchRegisterBlock) {
         self.touchRegisterBlock();
     }

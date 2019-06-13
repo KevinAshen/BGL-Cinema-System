@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) BGLRegisterView *registerView;
 
+@property (nonatomic, strong) NSMutableArray *registerMut;
+
 @end
 
 @implementation BGLRegisterViewController
@@ -27,6 +29,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisAppear:) name:UIKeyboardWillHideNotification object:nil];
     
+    self.registerMut = [[NSMutableArray alloc] init];
+    
     _registerView = [[BGLRegisterView alloc] initWithFrame:self.view.frame];
     [self.view addSubview:_registerView];
     
@@ -35,12 +39,27 @@
         tempTextField.delegate = self;
     }
     _registerView.touchSendBlock = ^(NSString *mailBoxStr) {
-        [self postMail:mailBoxStr];
+        UITextField *tempTextField =  _registerView.textFieldArr[1];
+        NSString *mailStr = tempTextField.text;
+        [self postMail:mailStr];
     };
     _registerView.touchLoginBlock = ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        for (int i = 0; i < 5; i++) {
+            UITextField *tempTextField = _registerView.textFieldArr[i];
+            NSString *tempStr = tempTextField.text;
+            NSLog(@"%d:%@", i, tempStr);
+            [_registerMut addObject:tempStr];
+        }
+        NSDictionary *registerDic = @{
+                                      @"email":_registerMut[1], @"password":_registerMut[2],
+                                      @"name":_registerMut[0], @"checkcode":_registerMut[4]
+                                      
+                                      };
+        [self postRegister:registerDic];
+        //[self dismissViewControllerAnimated:YES completion:nil];
     };
     _registerView.touchRegisterBlock = ^{
+        
         [self dismissViewControllerAnimated:YES completion:nil];
     };
 }
@@ -84,9 +103,18 @@
 }
 
 - (void)postMail:(NSString *)mailBoxStr {
+    //@"https://192.168.43.188:8080/codeController/getCheckCode"
+    ///CustomersController/registered
     NSString *url = @"https://39.107.70.44:8080/codeController/getCheckCode";
-    NSDictionary *parameters = @{@"email":@"894912881@qq.com"};
+    //NSDictionary *parameters = @{@"email":@"894912881@qq.com", @"password":@"123", @"name":@"jkw", @"checkcode":@"671661"};
+   NSDictionary *parameters = @{@"email":mailBoxStr};
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@---url---", url);
     NSLog(@"%@--parameters---", parameters);
+//    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
+//    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
+//    NSLog(@"%@--parameters---", parameters);
     
     
     if([APIClient networkType] > 0) {
@@ -95,6 +123,42 @@
             switch (requestStatusCode) {
                 case ApiRequestOK:{
                     NSLog(@"OK");
+                    NSLog(@"JSON:%@", JSON);
+                    break;
+                }
+                case ApiRequestError:
+                    break;
+                case ApiRequestNotReachable:
+                    break;
+                default:
+                    break;
+            }
+        }];
+    }
+}
+
+- (void)postRegister:(NSDictionary *)parameters {
+    //@"https://192.168.43.188:8080/codeController/getCheckCode"
+    ///CustomersController/registered
+    NSString *url = @"https://39.107.70.44:8080/CustomersController/registered";
+    //NSDictionary *parameters = @{@"email":@"894912881@qq.com", @"password":@"123", @"name":@"jkw", @"checkcode":@"671661"};
+    //NSDictionary *parameters = @{@"email":mailBoxStr};
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", url);
+    NSLog(@"%@--parameters---", parameters);
+    //    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
+    //    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
+    //    NSLog(@"%@--parameters---", parameters);
+    
+    
+    if([APIClient networkType] > 0) {
+        [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
+            NSLog(@"%ld", (long)requestStatusCode);
+            switch (requestStatusCode) {
+                case ApiRequestOK:{
+                    NSLog(@"OK");
+                    NSLog(@"JSON:%@", JSON);
                     break;
                 }
                 case ApiRequestError:

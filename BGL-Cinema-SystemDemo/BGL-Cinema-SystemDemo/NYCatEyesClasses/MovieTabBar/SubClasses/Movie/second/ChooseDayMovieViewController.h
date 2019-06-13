@@ -1,8 +1,8 @@
 //
-//  MovieTableViewCell.h
+//  ChooseDayMovieViewController.h
 //  BGL-Cinema-SystemDemo
 //
-//  Created by Kevin.J on 2019/6/8.
+//  Created by Kevin.J on 2019/6/10.
 //  Copyright © 2019 姜凯文. All rights reserved.
 //
 
@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MovieTableViewCell : UITableViewCell
+@interface ChooseDayMovieViewController : UIViewController
+
 
 @end
 

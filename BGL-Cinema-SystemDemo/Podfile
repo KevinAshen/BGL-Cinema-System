@@ -4,4 +4,5 @@ pod 'AFNetworking'
 pod 'Masonry'
 pod 'SDWebImage'
 pod 'SDCycleScrollView'
+pod 'JSONModel'
 end

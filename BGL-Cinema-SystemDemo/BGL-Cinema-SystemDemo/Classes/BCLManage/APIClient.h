@@ -46,7 +46,7 @@ AS_SINGLETON(APIClient);
 //网络状态监听，应用当前是否有网络：有返回YES， 没有返回NO
 + (void)networkReachableWithBlock:(void(^)(BOOL isReachable))block;
 //发送请求，返回JSON格式的响应数据
-+ (void)requestURL:(NSString *)urlString httpMethod:(HttpMethod)method contentType:(NSString *)contentType params:(NSDictionary *)params response:(APIClientRequestResponse)response;
++ (void)requestURL:(NSString *)urlString httpMethod:(HttpMethod)method contentType:(NSString *)contentType params:(id)params response:(APIClientRequestResponse)response;
 //取消所有网络请求
 + (void)cancelAllRequest;
 

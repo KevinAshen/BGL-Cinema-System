@@ -124,6 +124,7 @@
     
     _cityStr = @"西安";
     
+    
     [self loadSubViewControllers];
     self.tabBar.tintColor = [UIColor colorWithRed:208.0f/255 green:38.0f/255 blue:43.0f/255 alpha:1.0f];
     self.tabBar.barTintColor = [UIColor whiteColor];

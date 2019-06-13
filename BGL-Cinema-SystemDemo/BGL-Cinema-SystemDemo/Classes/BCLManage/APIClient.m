@@ -105,12 +105,25 @@ DEF_SINGLETON(APIClient);
     //[AFNetworkReachabilityManager sharedManager] stopMoni
 }
 //发送请求，返回JSON格式的响应数据
-+ (void)requestURL:(NSString *)urlString httpMethod:(HttpMethod)method contentType:(NSString *)contentType params:(NSDictionary *)params response:(APIClientRequestResponse)response{
++ (void)requestURL:(NSString *)urlString httpMethod:(HttpMethod)method contentType:(NSString *)contentType params:(id)params response:(APIClientRequestResponse)response{
     if([APIClient networkType] > 0) {
         APIClient *client = [APIClient sharedInstance];
         if(!client.manager) {
             AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+            //无条件的信任服务器上的证书
+            AFSecurityPolicy *securityPolicy = [AFSecurityPolicy defaultPolicy];
             
+            // 客户端是否信任非法证书
+            
+            securityPolicy.allowInvalidCertificates = YES;
+            
+            // 是否在证书域字段中验证域名
+            
+            securityPolicy.validatesDomainName = NO;
+            
+            manager.securityPolicy = securityPolicy;
+            
+
             manager.requestSerializer.timeoutInterval = 30;
             manager.requestSerializer = [AFHTTPRequestSerializer serializer];
             if(contentType) {

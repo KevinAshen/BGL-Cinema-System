@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - JSONModel (1.8.0)
   - Masonry (1.1.0)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
@@ -23,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - JSONModel
   - Masonry
   - SDCycleScrollView
   - SDWebImage
@@ -30,16 +32,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - JSONModel
     - Masonry
     - SDCycleScrollView
     - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
-PODFILE CHECKSUM: fad7c8301d06ce4fa5ddc5b55c39d3004a9d49c3
+PODFILE CHECKSUM: 2c6093bff08e3fab64c4a890a2a73beeb24783a3
 
 COCOAPODS: 1.5.3
