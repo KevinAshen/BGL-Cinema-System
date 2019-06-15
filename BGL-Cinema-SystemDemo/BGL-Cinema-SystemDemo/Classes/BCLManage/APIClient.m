@@ -122,7 +122,6 @@ DEF_SINGLETON(APIClient);
             securityPolicy.validatesDomainName = NO;
             
             manager.securityPolicy = securityPolicy;
-            
 
             manager.requestSerializer.timeoutInterval = 30;
             manager.requestSerializer = [AFHTTPRequestSerializer serializer];

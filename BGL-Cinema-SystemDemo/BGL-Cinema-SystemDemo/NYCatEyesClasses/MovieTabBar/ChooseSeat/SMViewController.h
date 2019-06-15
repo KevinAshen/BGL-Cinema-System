@@ -8,6 +8,7 @@
 
 #import "KyoRowIndexView.h"
 #import "KyoCenterLineView.h"
+@class DataSessionDetailJSONModel;
 
 @protocol SMCinameSeatScrollViewDelegate;
 @interface SMViewController : UIViewController <UIScrollViewDelegate>
@@ -17,6 +18,13 @@
 @property (nonatomic, copy) NSString *scheduleIdStr;
 @property (nonatomic, copy) NSString *cIdStr;
 @property (nonatomic, copy) NSString *hIdStr;
+
+@property (nonatomic, strong) DataSessionDetailJSONModel *dataSessionDetailJSONModel;
+
+
+
+typedef void(^callBack)(id obj);
+@property (nonatomic, copy) callBack callBlock;
 
 @end
 

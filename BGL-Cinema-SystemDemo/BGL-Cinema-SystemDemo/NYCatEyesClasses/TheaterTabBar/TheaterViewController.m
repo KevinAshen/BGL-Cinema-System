@@ -42,10 +42,7 @@ static NSString *kJKWCinemaTableViewCellIdentifier = @"cinemaTableViewCell";
             switch (requestStatusCode) {
                 case ApiRequestOK:{
                     NSError *err;
-                    NSLog(@"OK");
-                    NSLog(@"JSON:%@", JSON);
                     self.cinemaJSONModel = [[CinemaJSONModel alloc] initWithDictionary:JSON error:&err];
-                    NSLog(@"self.movieJSONModel:--%@--", self.cinemaJSONModel);
                     [_cinemableView reloadData];
                     //NSLog(@"JSONMEOL%@", _movieJSONModel.dataModel.comingListArr[3]);
                     break;
@@ -95,7 +92,6 @@ static NSString *kJKWCinemaTableViewCellIdentifier = @"cinemaTableViewCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     ChooseSessionViewController *chooseSessionViewController = [[ChooseSessionViewController alloc] init];
     chooseSessionViewController.cIdStr = [self.cinemaJSONModel.dataModel.cinemasArr[indexPath.row] idStr];
-    NSLog(@"chooseSessionViewController.cIdStr:%@", chooseSessionViewController.cIdStr);
     chooseSessionViewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:chooseSessionViewController animated:YES];
 }

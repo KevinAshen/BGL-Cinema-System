@@ -17,6 +17,8 @@
 		0425D95F22ABB4FC005EFEF0 /* YMCitySelect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0425D95522ABB4FC005EFEF0 /* YMCitySelect.bundle */; };
 		0425D96022ABB4FC005EFEF0 /* YMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D95622ABB4FC005EFEF0 /* YMCollectionViewCell.m */; };
 		0425D96222ABB505005EFEF0 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425D96122ABB505005EFEF0 /* Foundation+Log.m */; };
+		042D614322B28DC000A7ED04 /* OrderMovieJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D614222B28DC000A7ED04 /* OrderMovieJSONModel.m */; };
+		042D614622B2936B00A7ED04 /* JKWOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042D614522B2936B00A7ED04 /* JKWOrderTableViewCell.m */; };
 		04459B6E22B097DA002DBBB6 /* cy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04459B6A22B097DA002DBBB6 /* cy2.jpg */; };
 		04459B6F22B097DA002DBBB6 /* cy1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04459B6B22B097DA002DBBB6 /* cy1.jpg */; };
 		04459B7022B097DA002DBBB6 /* cy4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04459B6C22B097DA002DBBB6 /* cy4.jpg */; };
@@ -144,6 +146,10 @@
 		0425D95622ABB4FC005EFEF0 /* YMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCollectionViewCell.m; sourceTree = "<group>"; };
 		0425D95722ABB4FC005EFEF0 /* YMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMSearchBar.h; sourceTree = "<group>"; };
 		0425D96122ABB505005EFEF0 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		042D614122B28DC000A7ED04 /* OrderMovieJSONModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderMovieJSONModel.h; sourceTree = "<group>"; };
+		042D614222B28DC000A7ED04 /* OrderMovieJSONModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderMovieJSONModel.m; sourceTree = "<group>"; };
+		042D614422B2936B00A7ED04 /* JKWOrderTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKWOrderTableViewCell.h; sourceTree = "<group>"; };
+		042D614522B2936B00A7ED04 /* JKWOrderTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKWOrderTableViewCell.m; sourceTree = "<group>"; };
 		04459B6A22B097DA002DBBB6 /* cy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cy2.jpg; sourceTree = "<group>"; };
 		04459B6B22B097DA002DBBB6 /* cy1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cy1.jpg; sourceTree = "<group>"; };
 		04459B6C22B097DA002DBBB6 /* cy4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cy4.jpg; sourceTree = "<group>"; };
@@ -327,6 +333,8 @@
 				04E4847A22AD4D3600859FF1 /* JKWCinemaTableViewCell.m */,
 				044A1FCE22AF5C0000F96CF4 /* ChooseHallTableViewCell.h */,
 				044A1FCF22AF5C0000F96CF4 /* ChooseHallTableViewCell.m */,
+				042D614422B2936B00A7ED04 /* JKWOrderTableViewCell.h */,
+				042D614522B2936B00A7ED04 /* JKWOrderTableViewCell.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -749,6 +757,8 @@
 				0462EAD822B1839900A0389C /* SessionDetailJSONModel.m */,
 				0462EB0122B19C6200A0389C /* ChooseSeatJSONMOdel.h */,
 				0462EB0222B19C6200A0389C /* ChooseSeatJSONMOdel.m */,
+				042D614122B28DC000A7ED04 /* OrderMovieJSONModel.h */,
+				042D614222B28DC000A7ED04 /* OrderMovieJSONModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1001,7 +1011,9 @@
 				04FCF8F422ADFCC200E7EAD4 /* BCLCommunitySegmentView.m in Sources */,
 				047271D022A7911600F7CE52 /* MineViewController.m in Sources */,
 				047271CD22A7911600F7CE52 /* NYSegmentViewController.m in Sources */,
+				042D614322B28DC000A7ED04 /* OrderMovieJSONModel.m in Sources */,
 				0425D95E22ABB4FC005EFEF0 /* YMTableViewCell.m in Sources */,
+				042D614622B2936B00A7ED04 /* JKWOrderTableViewCell.m in Sources */,
 				04B77A0222800ED8006538FC /* BGLRegisterViewController.m in Sources */,
 				04B77A0822801175006538FC /* BGLLoginViewController.m in Sources */,
 				0462EAF522B18FF500A0389C /* KyoCenterLineView.m in Sources */,

@@ -42,6 +42,16 @@
         UITextField *tempTextField =  _registerView.textFieldArr[1];
         NSString *mailStr = tempTextField.text;
         [self postMail:mailStr];
+        UIAlertController *seatConfirmAlt = [UIAlertController alertControllerWithTitle:@"已发送给邮箱" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+        //UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction* deleteAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            //[self postOrder];
+            //[self.navigationController popViewControllerAnimated:YES];
+        }];
+        
+        //[seatConfirmAlt addAction:cancelAction];
+        [seatConfirmAlt addAction:deleteAction];
+        [self presentViewController:seatConfirmAlt animated:YES completion:nil];
     };
     _registerView.touchLoginBlock = ^{
         for (int i = 0; i < 5; i++) {
@@ -103,20 +113,11 @@
 }
 
 - (void)postMail:(NSString *)mailBoxStr {
-    //@"https://192.168.43.188:8080/codeController/getCheckCode"
-    ///CustomersController/registered
-    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckCode";
-    //NSDictionary *parameters = @{@"email":@"894912881@qq.com", @"password":@"123", @"name":@"jkw", @"checkcode":@"671661"};
+    //codeController/getCheckCode"
+    NSString *url = USELESSURL;
    NSDictionary *parameters = @{@"email":mailBoxStr};
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@---url---", url);
-    NSLog(@"%@--parameters---", parameters);
-//    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
-//    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
-//    NSLog(@"%@--parameters---", parameters);
-    
-    
     if([APIClient networkType] > 0) {
         [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
             NSLog(@"%ld", (long)requestStatusCode);
@@ -138,20 +139,9 @@
 }
 
 - (void)postRegister:(NSDictionary *)parameters {
-    //@"https://192.168.43.188:8080/codeController/getCheckCode"
-    ///CustomersController/registered
-    NSString *url = @"https://39.107.70.44:8080/CustomersController/registered";
-    //NSDictionary *parameters = @{@"email":@"894912881@qq.com", @"password":@"123", @"name":@"jkw", @"checkcode":@"671661"};
-    //NSDictionary *parameters = @{@"email":mailBoxStr};
+    NSString *url = USELESSURL;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", url);
-    NSLog(@"%@--parameters---", parameters);
-    //    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
-    //    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
-    //    NSLog(@"%@--parameters---", parameters);
-    
-    
     if([APIClient networkType] > 0) {
         [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
             NSLog(@"%ld", (long)requestStatusCode);

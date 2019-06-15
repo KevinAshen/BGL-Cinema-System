@@ -42,6 +42,7 @@ static NSString *kJKWMovieTableViewCellIdentifier = @"movieTableViewCell";
     [self setupMovieTableView];
     
     [self testAesCrpt];
+    
 }
 
 - (void)getMovieData {

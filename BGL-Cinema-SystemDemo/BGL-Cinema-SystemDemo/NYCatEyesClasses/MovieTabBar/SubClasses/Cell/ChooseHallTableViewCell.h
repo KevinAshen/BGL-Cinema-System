@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ChooseHallTableViewCell : BGLBaseTableViewCell
 
-typedef void(^BuyClick)(NSInteger *row);
+typedef void(^BuyClick)(NSInteger row);
 @property (nonatomic, copy) BuyClick buyBlock;
 
 @property (nonatomic, strong) UIButton *buyButton;

@@ -114,24 +114,14 @@
 }
 
 - (void)postLogin:(NSDictionary *)parameters {
-    //@"https://192.168.43.188:8080/codeController/getCheckCode"
-    ///CustomersController/registered
-    NSString *url = @"https://39.107.70.44:8080/CustomersController/customer";
+    NSString *url = USELESSURL;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:parameters options:NSJSONWritingPrettyPrinted error:nil];
     NSString *jsonString = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@--parameters---", parameters);
-    //    NSString *url = @"https://39.107.70.44:8080/codeController/getCheckphoto";
-    //    NSDictionary *parameters  = @{@"email":@"894912881@qq.com"};
-    //    NSLog(@"%@--parameters---", parameters);
-    
-    
     if([APIClient networkType] > 0) {
         [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
             NSLog(@"%ld", (long)requestStatusCode);
             switch (requestStatusCode) {
                 case ApiRequestOK:{
-                    NSLog(@"OK");
-                    NSLog(@"JSON:%@", JSON);
                     break;
                 }
                 case ApiRequestError:

@@ -55,21 +55,15 @@ static NSString *kChooseHallTableViewCellIdentifier = @"chooseHallTableViewCell"
 }
 
 - (void)getMovieData {
-    NSString *url = [NSString stringWithFormat:@"https://192.168.3.31:8080/scheduleController/schedule/%@", self.cIdStr];
-    //NSDictionary *parameters = @{@"cId":@"8813", @"mId":@"344328"};
+    NSString *url = USELESSURL;
     NSLog(@"uAArl:%@", url);
     if([APIClient networkType] > 0) {
         [APIClient requestURL:url httpMethod:GET contentType:@"application/x-www-form-urlencoded" params:nil response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
             NSLog(@"%ld", (long)requestStatusCode);
             switch (requestStatusCode) {
                 case ApiRequestOK:{
-                    NSLog(@"OK");
-                    NSLog(@"CinemaJSONApiRequestOK:%@", JSON);
                     self.sessionMovieJSONModel = [[SessionMovieJSONModel alloc] initWithDictionary:JSON error:nil];
-                    NSLog(@"self.sessionMovieJSONModel:--%@--", self.sessionMovieJSONModel);
                     [self setupMovieBrowser];
-//                    [_movieTableView reloadData];
-                    //NSLog(@"JSONMEOL%@", _movieJSONModel.dataModel.comingListArr[3]);
                     break;
                 }
                 case ApiRequestError:
@@ -84,19 +78,14 @@ static NSString *kChooseHallTableViewCellIdentifier = @"chooseHallTableViewCell"
 }
 
 - (void)postSessionDataWithcId:(NSString *)cIdStr mId:(NSString *)mIdStr {
-    NSLog(@"发送请求");
-    NSString *url = @"https://192.168.3.31:8080/scheduleController/schedule";
+    NSString *url = USELESSURL;
     NSDictionary *parameters  = @{@"cId":cIdStr, @"mId":mIdStr};
-    NSLog(@"URLparameters:%@", parameters);
     if([APIClient networkType] > 0) {
         [APIClient requestURL:url httpMethod:POST contentType:@"application/x-www-form-urlencoded" params:parameters response:^(ApiRequestStatusCode requestStatusCode, id JSON) {
             NSLog(@"%ld", (long)requestStatusCode);
             switch (requestStatusCode) {
                 case ApiRequestOK:{
-                    NSLog(@"OK");
-                    NSLog(@"JSONApiRequestOK:%@", JSON);
                     self.sessionDetailJSONModel = [[SessionDetailJSONModel alloc] initWithDictionary:JSON error:nil];
-                    NSLog(@"self.sessionDetailJSONModel:--%@--", self.sessionDetailJSONModel);
                     break;
                 }
                 case ApiRequestError:
@@ -111,9 +100,7 @@ static NSString *kChooseHallTableViewCellIdentifier = @"chooseHallTableViewCell"
 }
 
 - (void)setupMovieBrowser {
-    
     NSMutableArray *movies = [NSMutableArray array];
-    NSLog(@"setupMovieBrowser:%@", self.sessionMovieJSONModel);
     for (int i = 0; i < self.sessionMovieJSONModel.dataSessionMovieJSONModel.movieArr.count; i++) {
         MovieSessionMovieJSONModel *movieSessionMovieJSONModel = self.sessionMovieJSONModel.dataSessionMovieJSONModel.movieArr[i];
         ZXMovie *movie = [[ZXMovie alloc] init];
@@ -236,11 +223,14 @@ static NSInteger _lastIndex = -1;
     DataSessionDetailJSONModel *dataSessionDetailJSONModel = self.sessionDetailJSONModel.dataArr[indexPath.row];
     [chooseHallTableViewCell updateWithData:dataSessionDetailJSONModel];
     [chooseHallTableViewCell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    chooseHallTableViewCell.buyBlock = ^(NSInteger *row) {
+    chooseHallTableViewCell.buyBlock = ^(NSInteger row) {
         SMViewController *sMViewController = [[SMViewController alloc] init];
+        DataSessionDetailJSONModel *realdataSessionDetailJSONModel = self.sessionDetailJSONModel.dataArr[row];
+        sMViewController.dataSessionDetailJSONModel = realdataSessionDetailJSONModel;
+        
         sMViewController.cIdStr = self.cIdStr;
-        sMViewController.scheduleIdStr = [self.sessionDetailJSONModel.dataArr[indexPath.row] scheduleIdStr];
-        sMViewController.hIdStr = [self.sessionDetailJSONModel.dataArr[indexPath.row] hIdStr];
+        sMViewController.scheduleIdStr = [self.sessionDetailJSONModel.dataArr[row] scheduleIdStr];
+        sMViewController.hIdStr = [self.sessionDetailJSONModel.dataArr[row] hIdStr];
         [self.navigationController pushViewController:sMViewController animated:YES];
     };
     return chooseHallTableViewCell;
